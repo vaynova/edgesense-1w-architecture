@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1F4E79"/>
+    </marker>
+    <style>
+      .block { fill: #ffffff; stroke: #1F4E79; stroke-width: 2; rx: 6; }
+      .block-label { fill: #1F1F1F; font-size: 14px; font-weight: 600; text-anchor: middle; }
+      .block-sublabel { fill: #595959; font-size: 11px; text-anchor: middle; }
+      .accent { fill: #1F4E79; }
+      .arrow-line { stroke: #1F4E79; stroke-width: 1.6; fill: none; }
+      .title { fill: #1F4E79; font-size: 18px; font-weight: 700; text-anchor: middle; }
+      .footer { fill: #595959; font-size: 11px; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <text x="400" y="35" class="title">EdgeSense-1W — Top-Level Architecture</text>
+
+  <!-- Host Interface -->
+  <rect x="280" y="70" width="240" height="55" class="block"/>
+  <text x="400" y="92" class="block-label">Host Interface</text>
+  <text x="400" y="110" class="block-sublabel">SPI · I²C · 10-register control surface</text>
+
+  <!-- Control Unit -->
+  <rect x="280" y="170" width="240" height="55" class="block"/>
+  <text x="400" y="192" class="block-label">Control Unit</text>
+  <text x="400" y="210" class="block-sublabel">Sequencer · Register file · Layer scheduling</text>
+
+  <!-- Weight Memory -->
+  <rect x="60" y="280" width="220" height="60" class="block"/>
+  <text x="170" y="304" class="block-label">Weight Memory</text>
+  <text x="170" y="322" class="block-sublabel">On-chip SRAM · Compiled model</text>
+
+  <!-- Activation Memory -->
+  <rect x="520" y="280" width="220" height="60" class="block"/>
+  <text x="630" y="304" class="block-label">Activation Memory</text>
+  <text x="630" y="322" class="block-sublabel">Ping-pong SRAM · Banks A / B</text>
+
+  <!-- MAC Array -->
+  <rect x="280" y="395" width="240" height="55" class="block"/>
+  <text x="400" y="417" class="block-label">MAC Array</text>
+  <text x="400" y="435" class="block-sublabel">DS-Conv1D core · Fixed quantised arithmetic</text>
+
+  <!-- Post-processing -->
+  <rect x="280" y="490" width="240" height="55" class="block"/>
+  <text x="400" y="512" class="block-label">Post-processing</text>
+  <text x="400" y="530" class="block-sublabel">Activation · Pooling · Result register</text>
+
+  <!-- Connecting lines -->
+  <line x1="400" y1="125" x2="400" y2="168" class="arrow-line" marker-end="url(#arrow)"/>
+  <line x1="350" y1="225" x2="220" y2="278" class="arrow-line" marker-end="url(#arrow)"/>
+  <line x1="450" y1="225" x2="580" y2="278" class="arrow-line" marker-end="url(#arrow)"/>
+  <line x1="220" y1="340" x2="350" y2="393" class="arrow-line" marker-end="url(#arrow)"/>
+  <line x1="580" y1="340" x2="450" y2="393" class="arrow-line" marker-end="url(#arrow)"/>
+  <line x1="400" y1="450" x2="400" y2="488" class="arrow-line" marker-end="url(#arrow)"/>
+
+  <text x="400" y="580" class="footer">Vaynova Ltd · github.com/vaynova/edgesense-1w-architecture</text>
+</svg>
